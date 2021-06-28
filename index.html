@@ -9,6 +9,7 @@
 </head>
 <body id="me">
     <header>
+        <div id="overlay"></div>
         <nav>
             <div class="nav-item">
                 <a 
@@ -30,20 +31,25 @@
                     Contact me
                 </a>
             </div>
+            <div id="hamburguer" onclick="toggleMenu()">
+                <div class="hamburguer-line"></div>
+                <div class="hamburguer-line"></div>
+                <div class="hamburguer-line"></div>
+            </div>
             <div class="nav-item">
                 <ul>
                     <li>
-                        <a class="menu-item" href="#me">
+                        <a onclick="toggleMenu()" class="menu-item" href="#me">
                             me
                         </a>
                     </li>
                     <li>
-                        <a class="menu-item" href="#academic-experience">
+                        <a onclick="toggleMenu()" class="menu-item" href="#academic-experience">
                             experience
                         </a>
                     </li>
                     <li>
-                        <a class="menu-item" href="#skills">
+                        <a onclick="toggleMenu()" class="menu-item" href="#skills">
                             skills
                         </a>
                     </li>
@@ -141,10 +147,10 @@
         <section id="contact">
             <h2 style="color: white; text-align: center; margin-top: 65px; font-size: 2rem;">Send your message</h2>
             <form action="">
-                <input type="text" placeholder="Digite seu nome">
-                <input type="email" placeholder="Digite seu email">
-                <textarea  name="" id="" cols="30" rows="10" placeholder="Digite sua mensagem"></textarea>
-                <input type="submit" value="Enviar">
+                <input type="text" placeholder="Enter your name">
+                <input type="email" placeholder="Enter your e-mail">
+                <textarea  name="" id="" cols="30" rows="10" placeholder="Enter your message"></textarea>
+                <input type="submit" value="Send">
             </form>
         </section>
     </main>
