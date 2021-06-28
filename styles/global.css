@@ -32,6 +32,19 @@ html {
     scroll-behavior: smooth;
 }
 
+#container {
+    overflow-x: hidden;
+}
+
+#contact-btn {
+    width: 210px;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    margin-right: 30px;
+}
+
 ul {
     list-style: none;
     display: flex;
@@ -66,6 +79,8 @@ p {
     line-height: 30px;
     letter-spacing: 2px;
     color: var(--text-secondary-color);
+    text-align: justify;
+    max-width: 80%;
 }
 
 .container {
@@ -257,8 +272,9 @@ form {
 
 input,
 textarea {
-    width: 500px;
-    margin: 15px 0;
+    max-width: 500px;
+    width: calc(100% - 100px);
+    margin: 15px auto;
     border-radius: 5px;
     border: none;
     outline: none;
@@ -315,12 +331,59 @@ input[type="submit"] {
     #profile-container {
         margin: 0 auto;
     }
+
+    p {
+        max-width: 100%;
+    }
+
+    .grid {
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .card-item {
+        width: 100%;
+        margin: 0 auto;
+        margin-bottom: 40px;
+    }
+
+    .card-item:hover {
+        transform: scale(1.03);
+    }
+
+    .skill {
+        width: 60%;
+        margin: 0 auto 40px;
+    }
 }
 
 
 @media (max-width: 700px) {
     body {
         overflow-x: hidden;
+        width: 100vw;
+    }
+
+    h1 {
+        font-size: 2rem;
+        word-spacing: 5px;
+    }
+
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    #contact-btn {
+        width: auto;
+    }
+
+    #contact-btn span {
+        display: none;
+    }
+
+    #circle {
+        right: -20px;
+        bottom: 20px;
     }
 
     #overlay {
@@ -371,7 +434,7 @@ input[type="submit"] {
     }
 
     .nav-item:nth-child(3) ul li {
-        margin: 20px 100px;
+        margin: 20px 40px;
     }
     
     #hamburguer {
