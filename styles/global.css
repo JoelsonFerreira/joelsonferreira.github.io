@@ -29,6 +29,16 @@
 html {
     color: var(--text-primary-color);
     background-color: var(--background-color);
+    scroll-behavior: smooth;
+}
+
+ul {
+    list-style: none;
+    display: flex;
+}
+
+li {
+    margin: 0 0px 0 40px;
 }
 
 a {
@@ -36,6 +46,7 @@ a {
     font-weight: 400;
     font-size: 1.2rem;
     letter-spacing: 1px;
+    color: var(--text-primary-color);
 }
 
 h1 {
@@ -59,6 +70,7 @@ p {
 
 .container {
     margin: 0 auto;
+    width: calc(100% - 100px);
     max-width: 1200px;
 }
 
@@ -66,9 +78,20 @@ header {
     padding: 30px 0;
     display: flex;
     justify-content: space-between;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 5;
 }
 
 nav {
+    width: calc(100% - 100px);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+nav,
+.nav-item {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -85,10 +108,34 @@ nav {
     transform: scale(1.05);
 }
 
+.button:nth-child(1):hover {
+    transform: none;
+}
+
 section {
-    margin: 50px 0;
+    margin: 50px auto;
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
+}
+
+#academic-experience,
+#skills,
+#contact {
+    scroll-margin-top: 150px;
+}
+
+#description {
+    height: 400px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+#social-media {
+    display: flex;
+    justify-content: flex-end;
 }
 
 #about {
@@ -119,17 +166,25 @@ section {
     z-index: -1;
 }
 
+.indicator {
+    width: 8px;
+    height: 8px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+}
+
 .separator {
     width: 100%;
+    max-width: 1200px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin: 130px 0 60px;
+    margin: 130px auto 60px;
 }
 
 .line {
     height: 1px;
-    width: calc(100% - 300px);
+    width: calc(100% - 320px);
     background-color: var(--line-color);
 }
 
@@ -137,6 +192,7 @@ section {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    height: 300px;
 }
 
 .card-item {
@@ -151,68 +207,96 @@ section {
     transform: translateY(-20px);
 }
 
-/********************************************/
-
-.switch {
-    position: relative;
-    display: inline-block;
-    width: 60px;
-    height: 34px;
-}
-
-.switch input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-}
-
-.slider {
-    position: absolute;
+.skill {
+    width: 15%;
+    display: flex;
     cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: #ccc;
-    transition: 0.4s;
+    position: relative;
+    transition: transform 300ms;
 }
 
-.slider:before {
-    position: absolute;
-    content: "";
-    height: 40px;
-    width: 40px;
-    left: 0px;
-    bottom: 4px;
-    top: 0;
-    bottom: 0;
-    margin: auto 0;
-    transition: 0.4s;
-    box-shadow: 0 0px 15px #2020203d;
-    background: white url('https://i.ibb.co/FxzBYR9/night.png');
-    background-repeat: no-repeat;
-    background-position: center;
+.skill:hover {
+    transform: translateY(-10px);
 }
 
-input:checked + .slider {
-    background-color: var(--primary-color);
-}
+.skill:hover::after {
+    content:'';
 
-input:focus + .slider {
-    box-shadow: 0 0 1px var(--primary-color);
-}
+    bottom:20px;
+    left: calc(50% - 5px);
 
-input:checked + .slider:before {
-    transform: translateX(24px);
-    background: white url('https://i.ibb.co/7JfqXxB/sunny.png');
-    background-repeat: no-repeat;
-    background-position: center;
-}
+    width: 10px;
+    height: 10px;
 
-.slider.round {
-    border-radius: 34px;
-}
-
-.slider.round:before {
     border-radius: 50%;
+
+    position:absolute;
+    
+    background: var(--primary-color);
+}
+
+#contact {
+    background: blueviolet;
+    max-width: 100%;
+    margin: 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto;
+}
+
+input,
+textarea {
+    width: 500px;
+    margin: 15px 0;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    padding: 15px 30px;
+    color: black;
+    font-size: 1.1rem;
+    resize: none;
+    background-color: white;
+    position: relative;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #aaa;
+}
+
+input {
+    height: 50px;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+    width: 30%;
+    margin-left: auto;
+}
+
+.menu-item {
+    position: relative;
+    padding: 0 5px;
+}
+
+.menu-item::after {
+    content: " ";
+    position: absolute;
+    width: 0;
+    height: 1px;
+    background-color: transparent;
+    bottom: -10px;
+    left: 0;
+
+    transition: all 300ms;
+}
+
+.menu-item:hover::after {
+    background-color: #888;
+    width: 100%;
 }
