@@ -268,6 +268,7 @@ form {
     display: flex;
     flex-direction: column;
     margin: 50px auto;
+    width: 100%;
 }
 
 input,
@@ -487,4 +488,13 @@ input[type="submit"] {
         top: 39px;
         left: 8px;
     }
+}
+
+.link {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.link:hover {
+    text-decoration: underline;
 }
