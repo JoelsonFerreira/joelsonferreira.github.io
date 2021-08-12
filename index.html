@@ -7,7 +7,7 @@
     <title>Joelson Ferreira</title>
     <link rel="stylesheet" href="styles/global.css">
 </head>
-<body id="me">
+<body>
     <div id="container">
         <header>
             <div id="overlay"></div>
@@ -16,14 +16,15 @@
                     <a 
                         class="button" 
                         id="contact-btn"
-                        href="#contact"
+                        target="blank"
+                        href="./Joelson_Idalgo_Ferreira.pdf"
                     > 
                         <img 
-                            src="./assets/images/email_black_24dp.svg" 
+                            src="./assets/images/picture_as_pdf_white_24dp.svg" 
                             alt="email icon"
                         />
                         <span>
-                            Contact me
+                            Curriculum
                         </span>
                     </a>
                 </div>
@@ -47,6 +48,11 @@
                         <li>
                             <a onclick="toggleMenu()" class="menu-item" href="#skills">
                                 skills
+                            </a>
+                        </li>
+                        <li>
+                            <a onclick="toggleMenu()" class="menu-item" href="#contact">
+                                contact
                             </a>
                         </li>
                     </ul>
@@ -141,7 +147,7 @@
             </section>
 
             <section id="contact">
-                <h2 style="color: white; text-align: center; margin-top: 65px; font-size: 2rem;">Send your message</h2>
+                <h2 id="contact-title">Send your message</h2>
                 <form action="">
                     <input type="text" placeholder="Enter your name">
                     <input type="email" placeholder="Enter your e-mail">
